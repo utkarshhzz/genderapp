@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 import cv2
 
 #load all models
-haar=cv2.CascadeClassifier('F:/Face_Recognition/data preprocessuing/model/haarcascade_frontalface_default.xml') #cascade classifier
-model_svm=pickle.load(open('F:/Face_Recognition/data preprocessing2/model_svm.pickle','rb')) #SVM model machine learning
-pca_models=pickle.load(open('F:/Face_Recognition/data preprocessing2/pca_dict.pickle','rb')) #PCA model
+haar=cv2.CascadeClassifier('model/haarcascade_frontalface_default.xml') #cascade classifier
+model_svm=pickle.load(open('model/model_svm.pickle','rb')) #SVM model machine learning
+pca_models=pickle.load(open('model/pca_dict.pickle','rb')) #PCA model
 model_pca=pca_models['pca']
 mean_face_arr=pca_models['mean_face']
 

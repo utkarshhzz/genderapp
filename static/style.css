@@ -1,0 +1,120 @@
+/* Increase Face Recognition text size in navbar */
+.brand-text-div .navbar-brand-text {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+/* Increase logo size in navbar */
+.navbar-brand img {
+  width: 48px;
+  height: 48px;
+}
+/* Increase navbar height and font size */
+/* Increase navbar height and font size, move content left */
+.navbar {
+  min-height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.navbar-brand {
+  font-size: 2.4rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 32px;
+}
+.navbar-nav {
+  font-size: 1.6rem;
+  margin-left: 0;
+}
+.nav-item, .nav-link {
+  font-size: 1.6rem;
+  padding: 14px 32px !important;
+}
+
+/* Glass Navigation Container */
+.glass-nav {
+  --bg-color: rgba(255, 255, 255, 0.25);
+  --highlight: rgba(255, 255, 255, 0.75);
+  --text: #333;
+  width: 100vw;
+  min-width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 0;
+  padding: 0.5rem 0;
+  border-radius: 0;
+}
+
+.glass-content {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list {
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+.nav-item {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  background: transparent;
+}
+.nav-item:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+}
+.nav-item.active {
+  background-color: rgba(0, 123, 255, 0.2);
+  color: #007bff;
+}
+
+/* Glass effect layers (optional, keep if you use them) */
+.glass-filter,
+.glass-overlay,
+.glass-specular {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.glass-filter {
+  z-index: 1;
+  backdrop-filter: blur(4px);
+  filter: url(#glass-distortion) saturate(120%) brightness(1.15);
+}
+
+.glass-overlay {
+  z-index: 2;
+  background: var(--bg-color);
+}
+
+.glass-specular {
+  z-index: 3;
+  box-shadow: inset 1px 1px 1px var(--highlight);
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .glass-nav {
+    --bg-color: rgba(0, 0, 0, 0.25);
+    --highlight: rgba(255, 255, 255, 0.15);
+  }
+}

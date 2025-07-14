@@ -1,23 +1,24 @@
 {% extends 'base.html' %}
 
 {% block bodyblock %}
-<div class="container">
-    <br><br>
-    <h3 class="display-8 text-center mt-5">
-        Face Recognition Application
-    </h3>
-    <br>
-    <p>
-        Gender Classification:
-This application is powered by data and a machine learning model.
- When a user uploads an image, the backend automatically processes it by converting it to grayscale,
-  detecting and cropping the face, and transforming it into the required format.
-   The processed image is then passed to the model for gender prediction.
-    All these functionalities are integrated within a Flask web application.
-    </p>
-    <img src="/static/images/002.PNG" alt="photo for referencce" class="img-fluid mt-3" width="900" >
-    <a  class="btn btn-outline-primary" href="/app/gender/">Gender App</a>
+<div class="container app-container">
+ <section class="hero-section">
+ <div class="hero-content">
+ <h1 class="display-4 text-center mt-5">Face Recognition Application</h1>
+ <p class="lead text-center">Unlock the power of AI to understand images.</p>
+ </div>
+ </section>
+ 
+ <section class="info-section">
+ <h2>Gender Classification Feature</h2>
+ <p>
+ Our application utilizes a robust machine learning model for gender classification. When you upload an image, the system intelligently processes it: converting to grayscale, precisely detecting and cropping faces, and preparing the data for analysis. This processed image is then fed into the model for an accurate gender prediction. All of this is seamlessly integrated within a user-friendly Flask web application.
+ </p>
+ <img src="/static/images/002.PNG" alt="Illustrative example of face processing" class="img-fluid mt-3" width="900">
+ <div class="text-center mt-4">
+ <a class="btn btn-primary btn-lg" href="/app/gender/">Try Gender Classification</a>
+ </div>
+ </section>
 
 </div>
-   
 {% endblock %}

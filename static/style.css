@@ -1,7 +1,7 @@
 /* Increase Face Recognition text size in navbar */
 .brand-text-div .navbar-brand-text {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 2px;
 }
 /* Increase logo size in navbar */
@@ -27,8 +27,18 @@
   margin-left: 0;
 }
 .nav-item, .nav-link {
-  font-size: 1.6rem;
+  font-size: 1rem;
   padding: 14px 32px !important;
+}
+
+/* Base body styles for background and font */
+body {
+ font-family: 'Poppins', sans-serif; /* Use a clear font */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Subtle gradient background */
 }
 
 /* Glass Navigation Container */
@@ -42,8 +52,8 @@
   display: flex;
  align-items: center;
   justify-content: center;
- background: linear-gradient(45deg, #FF00FF, #00FFFF); /* Vibrant Gradient */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+ background: linear-gradient(45deg, #ee0979, #ff6a00); /* Vibrant Gradient */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Increased shadow */
   margin: 0;
  padding: 1rem 0; /* Increased padding */
   border-radius: 0;
@@ -71,16 +81,16 @@
   color: var(--text);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 8px 16px;
   border-radius: 8px;
  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Added transform */
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   color: #fff; /* White text for contrast */
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Text shadow for readability */
 }
 .nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.3); /* Lighter hover background */
+  background-color: rgba(255, 255, 255, 0.4); /* Lighter hover background */
   color: #000; /* Black text on hover */
   transform: translateY(-3px); /* Slight lift effect */
 }
@@ -94,25 +104,25 @@
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #f8f9fa; /* Light background */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15); /* Increased shadow */
   color: #333; /* Dark grey text */
+  position: relative; /* Needed for pseudo-elements */
+  z-index: 1; /* Ensure content is above background effects */
 }
 
 h1, h2, h3 {
-  color: #007bff; /* Primary color for headings */
+  color: #ee0979; /* Primary color for headings */
+  margin-bottom: 15px;
+  text-align: center; /* Center headings */
 }
 
 p {
   line-height: 1.6;
   margin-bottom: 15px;
 }
-}
-.nav-item.active {
-  background-color: rgba(0, 123, 255, 0.2);
-  color: #007bff;
-}
+
 
 /* Glass effect layers (optional, keep if you use them) */
 .glass-filter,
@@ -139,6 +149,48 @@ p {
   box-shadow: inset 1px 1px 1px var(--highlight);
 }
 
+/* Responsive Design - Basic adjustments */
+@media (max-width: 768px) {
+ .navbar-brand {
+  font-size: 2rem;
+ }
+ .navbar-nav {
+  font-size: 1.4rem;
+ }
+ .nav-list {
+  flex-direction: column; /* Stack nav items on smaller screens */
+  align-items: center;
+ }
+ .nav-item {
+  padding: 10px 20px;
+ }
+ .container {
+  padding: 15px;
+  margin: 15px auto;
+ }
+ h1 {
+  font-size: 2rem;
+ }
+}
+
+/* Styles for Icons (if used, adjust classes as needed) */
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* Styles for Filters (if used, e.g., image filters) */
+.filtered-image {
+  filter: grayscale(50%) blur(2px); /* Example filter */
+  transition: filter 0.3s ease-in-out;
+}
+.filtered-image:hover {
+  filter: none; /* Remove filter on hover */
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
  .glass-nav {
@@ -152,4 +204,11 @@ p {
  background-color: rgba(255, 255, 255, 0.1);
  color: #fff;
  }
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
 }

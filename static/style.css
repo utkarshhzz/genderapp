@@ -40,27 +40,27 @@
   min-width: 100vw;
   position: relative;
   display: flex;
-  align-items: center;
+ align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.1);
+ background: linear-gradient(45deg, #FF00FF, #00FFFF); /* Vibrant Gradient */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin: 0;
-  padding: 0.5rem 0;
+ padding: 1rem 0; /* Increased padding */
   border-radius: 0;
 }
 
 .glass-content {
   width: 100vw;
   display: flex;
-  justify-content: center;
+ justify-content: flex-start; /* Align to start */
   margin: 0;
   padding: 0;
 }
 
 .nav-list {
-  width: 100vw;
+  width: auto; /* Auto width */
   display: flex;
-  justify-content: flex-start;
+ justify-content: flex-start;
   gap: 2rem;
   list-style: none;
   margin: 0;
@@ -74,12 +74,40 @@
   font-size: 1.1rem;
   padding: 8px 16px;
   border-radius: 8px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+ transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Added transform */
   background: transparent;
+  color: #fff; /* White text for contrast */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Text shadow for readability */
 }
 .nav-item:hover {
-  background-color: rgba(0, 123, 255, 0.1);
-  color: #007bff;
+  background-color: rgba(255, 255, 255, 0.3); /* Lighter hover background */
+  color: #000; /* Black text on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.4); /* More prominent active background */
+  color: #000;
+}
+
+/* Main content area */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: #333; /* Dark grey text */
+}
+
+h1, h2, h3 {
+  color: #007bff; /* Primary color for headings */
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
 }
 .nav-item.active {
   background-color: rgba(0, 123, 255, 0.2);
@@ -113,8 +141,15 @@
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
-  .glass-nav {
-    --bg-color: rgba(0, 0, 0, 0.25);
-    --highlight: rgba(255, 255, 255, 0.15);
-  }
+ .glass-nav {
+ background: linear-gradient(45deg, #8A2BE2, #DC143C); /* Darker vibrant gradient */
+ }
+ .nav-item {
+ color: #eee;
+ text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+ }
+ .nav-item:hover {
+ background-color: rgba(255, 255, 255, 0.1);
+ color: #fff;
+ }
 }

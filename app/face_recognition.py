@@ -66,3 +66,10 @@ def faceRecognitionPipeline(filename,path=True):
         }
         predictions.append(output)
     return img, predictions
+def agePredictionPipeline(filename, path=True):
+    """
+    Placeholder for Age Prediction feature.
+    Returns 'Under Construction' message and no predictions.
+    """
+    # You can implement age prediction logic here in the future
+    return None, [{'prediction_name': 'Under Construction', 'prob_score': None}]

@@ -1,68 +1,50 @@
 {% extends "base.html" %}
 
 {% block bodyblock %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <br><br>
-            <h3 class="display-6 text-center mt-5 mb-4">Gender Classification</h3>
-            <p class="text-center">Upload an image to see our AI's prediction on the gender of the faces detected.</p>
-
-            <form method="POST" enctype="multipart/form-data" class="mt-4">
-                <label for="imageUpload" class="file-upload-label">Choose Image</label>
- <div class="input-group mb-3">
- <input type="file" class="form-control" id="imageUpload" name="image_name" required>
- <button type="submit" class="btn btn-primary gender-predict-button">Upload and Predict</button>
- </div>
-
-            </form>
-    </div>
-    </div>
-
-    {% if fileupload and report %}
-        <div class="row mt-5">
-        <div class="col-12">
-            <br><br>
-            <h4 class="display-8 mb-4 text-center">Prediction Results</h4>
-            <div class="row">
-                <div class="col-md-6 offset-md-3 text-center">
-                    <h5 class="mb-3">Predicted Image with Detections</h5>
-                    <img src="{{ url_for('static', filename='predict/prediction_image.jpg') }}" class="img-fluid rounded shadow" alt="Predicted Image">
+<div class="container hero-background" style="min-height:100vh; padding-top:40px;">
+    <div class="row justify-content-center">
+        <div class="col-md-8 glass p-5 mt-4 mb-4">
+            <div class="text-center mb-5">
+                <span class="float glass px-4 py-2 rounded-pill text-sm font-bold mb-2 pulse-glow" style="display:inline-block;">👋 Welcome to Gender Predictor!</span>
+        <h1 class="display-4 mb-3" style="background: linear-gradient(90deg, #6a5af9, #ff6ac1); -webkit-background-clip: text; color: transparent;">Gender Prediction</h1>
+        <p class="lead text-muted mb-4">Upload your photo and get instant gender prediction powered by AI. Fast, secure, and private!</p>
+                <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+            <a href="/age" class="btn btn-outline-warning btn-lg px-5 ms-3">Age Predictor (Coming Soon)</a>
                 </div>
             </div>
-            <hr>
-            <br>
-            <h5 class="mb-3 text-center">Detailed Analysis of Detected Faces</h5>
-            <div class="table-responsive">
-            <table class="table table-hover table-striped align-middle">
-                <thead>
-                    <tr>
-                        <th>Detected Face</th>
-                        <th>Eigen Image</th>
-                        <th>Prediction Gender</th>
-                        <th>Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% if report | length == 0 %}
-                    <tr>
-                        <td colspan="4" class="text-center">No faces detected in the uploaded image.</td>
-                    </tr>
-                    {% endif %}
-                    {% for element in report %}
-                    <tr>
-                        <td><img src="{{ url_for('static', filename='predict/' ~ element[0]) }}" class="img-fluid" height="100" alt=""></td>
-                        <td><img src="{{ url_for('static', filename='predict/' ~ element[1]) }}" class="img-fluid" height="100" alt=""></td>
-                        <td>{{ element[2] }}</td>
-                        <td>{{ element[3] }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+            <form method="POST" enctype="multipart/form-data" class="mb-4">
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" name="image_name" required>
+                    <button type="submit" class="glow-button">Predict Your Gender</button>
+                </div>
+            </form>
+            {% if fileupload and report %}
+            <div class="glass p-4 mb-4">
+                <h3 class="mb-3">Prediction Results</h3>
+                <img src="{{ url_for('static', filename='predict/prediction_image.jpg') }}" class="img-fluid mb-3" style="border-radius:1rem;box-shadow:0 0 20px #6a5af9;" width="500" alt="">
+                <table class="table table-hover table-striped glass">
+                    <thead>
+                        <tr>
+                            <th>Detection Face</th>
+                            <th>Eigen Image</th>
+                            <th>Prediction Gender</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for element in report %}
+                        <tr>
+                            <td><img src="{{ url_for('static', filename='predict/' ~ element[0]) }}" class="img-fluid" height="100" style="border-radius:0.5rem;box-shadow:0 0 10px #ff6ac1;" alt=""></td>
+                            <td><img src="{{ url_for('static', filename='predict/' ~ element[1]) }}" class="img-fluid" height="100" style="border-radius:0.5rem;box-shadow:0 0 10px #6a5af9;" alt=""></td>
+                            <td><span class="badge bg-primary" style="font-size:1rem;">{{ element[2] }}</span></td>
+                            <td><span class="badge bg-info" style="font-size:1rem;">{{ element[3] }}</span></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
+            {% endif %}
         </div>
-    {% endif %}
-
+    </div>
 </div>
-
 {% endblock %}

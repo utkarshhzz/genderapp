@@ -5,30 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face Recognition Web App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:aqua">
-    <div class="container d-flex align-items-center">
-      <div class="logo-div">
-        <a class="navbar-brand" href="/">
-          <img  class="image-fluid" src="{{ url_for('static', filename='images/icon.png') }}" alt="brand logo" width="75" height="" class="d-inline-block align-text-top">
-        </a>
-      </div>
-      <div class="brand-text-div ms-3">
-        <span class="navbar-brand-text">Face Recognition</span>
-      </div>
-      <div class="collapse navbar-collapse">
-        <div class="navbar-nav">
-          <a  class="nav-item nav-link" href="/">Home</a>
-          <a  class="nav-item nav-link" href="/app">App</a>
-        </div>
+<body class="hero-background" style="min-height:100vh;">
+  <nav class="navbar navbar-expand-lg glass shadow-lg mb-4" style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="{{ url_for('static', filename='images/icon.png') }}" alt="brand logo" width="60" style="border-radius:50%; box-shadow:0 0 20px #6a5af9;">
+        <span class="ms-3 fw-bold" style="font-size:2rem; background: linear-gradient(90deg, #6a5af9, #ff6ac1); -webkit-background-clip: text; color: transparent;">Face Recognition</span>
+      </a>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-item nav-link glow-button mx-2" href="/">Home</a>
+        <a class="nav-item nav-link glow-button mx-2" href="/app">App</a>
       </div>
     </div>
   </nav>
   {% block bodyblock %}
   {% endblock %}
-  </body>
-  </html>
+</body>
+</html>

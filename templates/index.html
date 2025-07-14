@@ -1,32 +1,38 @@
 {% extends 'base.html' %}
 {% block bodyblock %}
-<div class="container">
-    <header>
-        <h1>Welcome to FaceScan: Your Modern Face Recognition App</h1>
-        <p>Unlock the power of facial recognition with a simple upload.</p>
-    </header>
-
-    <main>
-        <section class="intro">
-            <h2>What is Face Recognition?</h2>
-            <p>Face recognition is a biometric technology that identifies or verifies a person based on a digital image or a video frame of their face. It's a sophisticated process that involves detecting a face in an image, analyzing its unique features, and comparing those features to a database of known faces.</p>
-            <p>Our app utilizes advanced algorithms to provide accurate and fast face analysis, offering insights and capabilities for various applications.</p>
-        </section>
-
-        <section class="features">
-            <h2>Why Use FaceScan?</h2>
-            <ul>
-                <li><strong>Accuracy:</strong> Leveraging cutting-edge models for reliable results.</li>
-                <li><strong>Speed:</strong> Get insights quickly and efficiently.</li>
-                <li><strong>Simplicity:</strong> An easy-to-use interface for everyone.</li>
-            </ul>
-        </section>
-
-        <!-- Placeholder for images or interactive elements -->
-        <div class="image-placeholder"></div>
-
-        <!-- Section potentially for 3D models or enhanced visuals -->
-        <section class="visual-enhancement"></section>
-    </main>
+<div class="container hero-background" style="min-height:100vh; padding-top:40px;">
+    <div class="row justify-content-center">
+        <div class="col-md-10 glass p-5 mt-4 mb-4">
+            <div class="text-center mb-5">
+                <span class="float glass px-4 py-2 rounded-pill text-sm font-bold mb-2 pulse-glow" style="display:inline-block;">👋 Welcome to Gender Predictor!</span>
+                <h1 class="display-4 mb-3" style="background: linear-gradient(90deg, #6a5af9, #ff6ac1); -webkit-background-clip: text; color: transparent;">Gender Predictor</h1>
+                <p class="lead text-muted mb-4">Snap a photo and let our AI instantly predict your gender. Fast, real-time, and responsive!</p>
+                <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                    <a href="/gender" class="btn btn-primary btn-lg px-5 me-3">Predict Your Gender</a>
+                    <a href="/age" class="btn btn-outline-warning btn-lg px-5 ms-3">Age Predictor (Coming Soon)</a>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="glass p-4 text-center">
+                        <h3 class="mb-2" style="background: linear-gradient(90deg, #6a5af9, #ff6ac1); -webkit-background-clip: text; color: transparent;">Real-Time & Fast</h3>
+                        <p class="text-muted">Get your gender prediction in seconds. Our AI is optimized for speed and accuracy.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass p-4 text-center">
+                        <h3 class="mb-2" style="background: linear-gradient(90deg, #ff6ac1, #4fd1c5); -webkit-background-clip: text; color: transparent;">Modern & Responsive</h3>
+                        <p class="text-muted">Enjoy a beautiful, mobile-friendly experience with glassmorphism and vibrant colors.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass p-4 text-center">
+                        <h3 class="mb-2" style="background: linear-gradient(90deg, #6a5af9, #4fd1c5); -webkit-background-clip: text; color: transparent;">Age Predictor</h3>
+                        <p class="text-muted">Coming soon: Predict your age from your photo. Stay tuned for more features!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

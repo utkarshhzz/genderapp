@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 
 {% block bodyblock %}
-<div class="container app-container">
- <section class="hero-section">
- <div class="hero-content">
- <h1 class="display-4 text-center mt-5">Face Recognition Application</h1>
- <p class="lead text-center">Unlock the power of AI to understand images.</p>
- </div>
- </section>
- 
- <section class="info-section">
- <h2>Gender Classification Feature</h2>
- <p>
- Our application utilizes a robust machine learning model for gender classification. When you upload an image, the system intelligently processes it: converting to grayscale, precisely detecting and cropping faces, and preparing the data for analysis. This processed image is then fed into the model for an accurate gender prediction. All of this is seamlessly integrated within a user-friendly Flask web application.
- </p>
- <img src="/static/images/002.PNG" alt="Illustrative example of face processing" class="img-fluid mt-3" width="900">
- <div class="text-center mt-4">
- <a class="btn btn-primary btn-lg" href="/app/gender/">Try Gender Classification</a>
- </div>
- </section>
-
+<div class="container hero-background" style="min-height:100vh; padding-top:40px;">
+    <div class="row justify-content-center">
+        <div class="col-md-10 glass p-5 mt-4 mb-4">
+            <div class="text-center mb-5">
+                <span class="float glass px-4 py-2 rounded-pill text-sm font-bold mb-2 pulse-glow" style="display:inline-block;">AI Powered Face Recognition</span>
+        <h1 class="display-4 mb-3" style="background: linear-gradient(90deg, #6a5af9, #ff6ac1); -webkit-background-clip: text; color: transparent;">Gender Predictor</h1>
+        <p class="lead text-muted mb-4">Upload your photo and let our AI predict your gender in seconds. Fast, accurate, and private!</p>
+            </div>
+            <div class="glass p-4 mb-4">
+                <h2 class="mb-3" style="background: linear-gradient(90deg, #ff6ac1, #4fd1c5); -webkit-background-clip: text; color: transparent;">Gender Classification Feature</h2>
+                <p class="text-muted">Our application uses robust machine learning models for gender classification. Upload an image, and the system will process, analyze, and predict gender with high accuracy—all in a beautiful, user-friendly interface.</p>
+                <img src="/static/images/002.PNG" alt="Illustrative example of face processing" class="img-fluid mt-3 mb-3" style="border-radius:1rem;box-shadow:0 0 20px #6a5af9;" width="900">
+                <div class="text-center mt-4">
+                <a href="/gender" class="btn btn-primary btn-lg px-5">Predict Your Gender</a>
+                <a href="/age" class="btn btn-outline-warning btn-lg px-5 ms-3">Age Predictor (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

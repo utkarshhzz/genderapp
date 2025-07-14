@@ -40,6 +40,69 @@ body {
   color: #333;
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Subtle gradient background */
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #6a5af9 0%, #ff6ac1 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+    color: #222;
+}
+
+.hero-background {
+    background: linear-gradient(135deg, #6a5af9 0%, #ff6ac1 50%, #4fd1c5 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+}
+
+.glass {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+}
+
+.glow-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px #6a5af9;
+    color: #fff;
+    background: linear-gradient(90deg, #6a5af9 0%, #ff6ac1 100%);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.glow-button:hover {
+    box-shadow: 0 0 40px #ff6ac1, 0 0 60px #6a5af9;
+    transform: translateY(-2px);
+}
+
+.float {
+    animation: float 6s ease-in-out infinite;
+}
+.pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px #6a5af9; }
+    50% { box-shadow: 0 0 40px #ff6ac1, 0 0 60px #6a5af9; }
+}
 
 /* Glass Navigation Container */
 .glass-nav {
@@ -136,6 +199,7 @@ p {
 .glass-filter {
   z-index: 1;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   filter: url(#glass-distortion) saturate(120%) brightness(1.15);
 }
 
